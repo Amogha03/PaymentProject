@@ -1,0 +1,80 @@
+<div class="mt-5" style=" margin-left: 10%; margin-right:15%;">
+    <div class="card border-info mb-3" fgid="11555">
+        <div class="card-header fs-3 text-center" fgid="11561">Transfer Money</div>
+        <div class="card-body">
+            <form [formGroup]="transferForm" (ngSubmit)="handleTransaction()">
+                <div class="row ">
+                    <div class="col-md-6 mb-3">
+                        <label for="receiveraccounholdernumber" class="form-label">ReceiverCustomerId</label>
+                        <input type="number" class="form-control"
+                        name="receiveraccounholdernumber"
+                        id="receiveraccounholdernumber"
+                        autocomplete="off"
+                        formControlName="receiveraccounholdernumber">
+                        <div *ngIf="!rcustomerid?.valid && rcustomerid?.dirty " class="text-danger mt-2">
+                           <div *ngIf="rcustomerid.errors?.min">Minimum value should be 0</div>
+                           <div *ngIf="rcustomerid.errors?.required">Receiver Customerid is required</div>
+                         </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="receiverbic" class="form-label">ReceiverBIC</label>
+                        <input type="text" class="form-control"
+                        id="receiverbic"
+                        name="receiverbic"
+                        formControlName="receiverbic"
+                        autocomplete="off">
+                        <div *ngIf="!rbic?.valid && rbic?.dirty " class="text-danger mt-2">
+                            <div *ngIf="rbic.errors?.pattern">Should be Capital Alphanumeric</div>
+                            <div *ngIf="rbic.errors?.required">ReceiverBIC is required</div>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="currencyamount" class="form-label">Amount</label>
+                        <input type="number" class="form-control"
+                        id="currencyamount"
+                        name="currencyamount"
+                        formControlName="currencyamount"
+                        
+                        autocomplete="off"
+                        min="0"
+                        
+                        >
+                        <div *ngIf="!currencyamount?.valid && currencyamount?.dirty " class="text-danger mt-2">
+                            <div *ngIf="currencyamount.errors?.min">Minimum value should be 0</div>
+                            <div *ngIf="currencyamount.errors?.required">Currency Amount is required</div>
+                          </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="transferfees" class="form-label">Transfer Fees</label>
+                        <input type="number" class="form-control"
+                        id="transferfees"
+                        name="transferfees"
+                        autocomplete="off"
+                        [value]="(transferForm.controls['currencyamount'].value * transferfees)/100"
+                        readonly>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-6 mb-3">
+                        <app-dropdown [schema]="dropdown"
+                        (handlechanges)="handleChange($event)"></app-dropdown>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="" class="form-label">Total amount to be debited</label>
+                        <input type="number" class="form-control" readonly
+                        [value]="transferForm.controls['currencyamount'].value+(transferForm.controls['currencyamount'].value * transferfees)/100">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mb-3">
+                        <button class="btn btn-primary form-control" [disabled]="!transferForm.valid">Submit</button>
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>

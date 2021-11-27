@@ -1,0 +1,29 @@
+<div>
+    <h3>Transaction History</h3>
+<table class=" table table-responsive table-responsive ">
+    <thead>
+      <tr>
+          <th scope = "col">Transaction id</th>
+        <th scope = "col">recieverBIC</th>
+        <th scope="col">receivercustomerid</th>
+        <th scope="col">receivername</th>
+        <th scope="col">amount</th>
+        <th scope="col">transferfess</th>
+        <th scope="col">transferdate</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let x of history; let i=index">
+        <th scope="row">{{x.transactionid}}</th>
+        <th scope="row">{{x.receiverbic.bic}}</th>
+        <th scope="row">{{x.receiveraccounholdernumber.customerid}}</th>
+        <th scope="row">{{x.receiveraccountholdername}}</th>
+       <th scope="row">{{x.currencyamount}}</th> 
+        <th scope="row">{{x.transferfees}}</th>
+        <th class="row">{{x.transferDate}}</th>
+        
+        
+      </tr>
+    </tbody>
+  </table>
+</div>

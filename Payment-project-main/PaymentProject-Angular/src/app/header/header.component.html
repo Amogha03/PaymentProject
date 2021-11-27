@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" fgid="19168">
+    <div class="container-fluid" fgid="19174">
+      <a class="navbar-brand" href="#" fgid="19180">DBS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01" fgid="19187">
+        <ul class="navbar-nav me-auto" fgid="19193">
+          <li class="nav-item" fgid="19245">
+            <a class="nav-link" style="cursor: pointer;" routerLink="login" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}" 
+            fgid="19251" *ngIf="!token">Login</a>
+        </li>
+        <li class="nav-item" fgid="19245">
+          <a class="nav-link" style="cursor: pointer;" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact:true}" 
+          fgid="19251" (click)="onLogout()" *ngIf="token">Logout</a>
+      </li>
+           <app-navitems *ngFor="let item of itemslist" [item]="item"></app-navitems>
+        </ul>    
+      </div>
+    </div>
+</nav>

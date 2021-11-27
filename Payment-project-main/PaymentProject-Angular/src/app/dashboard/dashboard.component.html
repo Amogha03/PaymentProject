@@ -1,0 +1,33 @@
+<div>
+
+    <div class="row mt-3">
+        <div class="col-md-4">
+            <div class="card text-white bg-warning" style="max-width: 20rem;
+            cursor: pointer;" routerLink="viewprofile" fgid="9193">
+                <div class="card-header" fgid="9199">Profile</div>
+                <div class="card-body" fgid="9206">
+                    <h4 class="card-title" fgid="9212">View Profile</h4>
+                    <p class="card-text" fgid="9219">A Customer can view his profile and Edit 
+                        his profile
+                    </p>     
+                </div>
+            </div>
+            <div class="card text-white bg-primary mt-3"
+             style="max-width: 20rem;" fgid="9193">
+                <div class="card-header" fgid="9199">Overall details</div>
+                <div class="card-body" fgid="9206">
+                    <!-- <h4 class="card-title" fgid="9212">All Customers and names</h4>
+                    <p class="card-text" fgid="9219">Some quick example text to build on the card title and make up the
+                        bulk of the card's content.</p> -->
+                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                            <button type="button" class="btn btn-warning" routerLink="topcustomers">Top 5 Customers</button>
+                            <button type="button" class="btn btn-success" routerLink="transhistory">Transaction History</button>
+                          </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+          <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

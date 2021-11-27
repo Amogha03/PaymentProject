@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="row gutters">
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="account-settings">
+                        <div class="user-profile">
+                            <div class="user-avatar">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
+                            </div>
+                            <h5 class="user-name">{{profile?.accountholdername}}</h5>
+                            <h6 class="user-email"></h6>
+                        </div>
+                        <div class="about">
+                            <h5>About</h5>
+                            <p>A Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="row gutters">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <h6 class="mb-2 text-primary">Personal Details</h6>
+                        </div><br>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                           <div class="row">
+                               <div class="col-md-6">
+                                   FullName
+                               </div>
+                               <div class="col-md-6">
+                                   {{profile?.accountholdername}}
+                               </div>
+                           </div><br>
+                           <div class="row">
+                               <div class="col-md-6">
+                                   Customer ID
+                               </div>
+                               <div class="col-md-6">
+                                   {{profile?.customerid}}
+                               </div>
+                           </div><br>
+                           <div class="row">
+                               <div class="col-md-6">
+                                   Clear Balance
+                               </div>
+                               <div class="col-md-6">
+                                   {{profile?.clearbalance}}
+
+                               </div>
+                           </div><br>
+                           <div class="row">
+                               <div class="col-md-6">
+                                   Customer Address
+                               </div>
+                               <div class="col-md-6">
+                                   {{profile?.customeraddress}}
+
+                               </div>
+                           </div><br>
+                           <div class="row">
+                               <div class="col-md-6">
+                                   Customer City
+                               </div>
+                               <div class="col-md-6">
+                                   {{profile?.customercity}}
+                               </div>
+                           </div>
+                           <br>
+                           <div class="row">
+                               <div class="col-md-4">
+                                   <a class="btn btn-primary" routerLink="../editprofile">Edit Profile</a>
+                               </div>
+                           </div>
+                        </div>
+                    </div>              
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
