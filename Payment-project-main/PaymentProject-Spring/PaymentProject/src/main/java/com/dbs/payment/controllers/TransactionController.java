@@ -168,7 +168,6 @@ public class TransactionController {
 
 //		System.out.println(transaction.getSenderbic());
 //		System.out.println(transaction);
-		System.out.println("inside mt");
 		List<String> list = new ArrayList();
 		try {
 
@@ -202,7 +201,8 @@ public class TransactionController {
 
 			TransferTypes transfertype = transfertypeservice.findTransferTypeByID(transfertypecode);
 
-			if (scustomer != null && sbank != null && rcustomer != null && rbank != null && message != null) {
+			if (scustomer != null && sbank != null && rcustomer != null && rbank != null && message != null
+					&& verifyinSDNlist(rcustomer.getAccountholdername()) == false) {
 
 				if ((scustomer.getClearbalance() >= todebitamount || scustomer.getOverdraftflag() == 1)
 						&& scustomer.getClearbalance() > 0) {
