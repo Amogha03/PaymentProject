@@ -29,10 +29,6 @@ export class HeaderComponent implements OnInit {
 
   onLogout(){
     sessionStorage.removeItem('token')
-   
-    // this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-    //   this.router.navigate(['/login']);
-    // });
 
     this.router.navigate(['/login'])
   }

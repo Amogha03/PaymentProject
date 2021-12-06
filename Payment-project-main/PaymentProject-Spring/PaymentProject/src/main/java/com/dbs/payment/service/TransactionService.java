@@ -16,7 +16,6 @@ public class TransactionService {
     public boolean updateTransaction(Transaction transaction) {
 		
 		try {
-			System.out.println("inside ts");
 		    this.repo.save(transaction);
 		}catch(IllegalArgumentException e) {
 			return false;
